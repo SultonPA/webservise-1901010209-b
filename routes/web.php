@@ -4,6 +4,8 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 
+use app\Http\Controllers\PortofolioController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -29,3 +31,8 @@ route::get('/hal2', function () {
 })->name('halaman2');
 
 route::get('/profile', [ProfileController::class, 'home'])->name(('profile'));
+
+// route::get('/Portofolio', [HomeController::class, 'index'])->name('portofolio');
+route::get('/portofolio', function () {
+    return view('sultonporto');
+});
