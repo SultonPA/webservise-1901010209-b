@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 
 use app\Http\Controllers\PortofolioController;
+use SebastianBergmann\Template\Template;
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,3 +38,10 @@ route::get('/profile', [ProfileController::class, 'home'])->name(('profile'));
 route::get('/portofolio', function () {
     return view('sultonporto');
 });
+route::get('/admin', function () {
+    return view('login');
+});
+route::view('master', 'template/master');
+
+route::get('data-mahasiswa', [MahasiswaController::class, 'index']);
+route::get('add-mahasiswa', [MahasiswaController::class, 'create']);
