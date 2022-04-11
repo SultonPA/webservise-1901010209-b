@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SoalController;
 
 use app\Http\Controllers\PortofolioController;
 use SebastianBergmann\Template\Template;
@@ -45,3 +46,8 @@ route::view('master', 'template/master');
 
 route::get('data-mahasiswa', [MahasiswaController::class, 'index']);
 route::get('add-mahasiswa', [MahasiswaController::class, 'create']);
+route::get('mahasiswa/create', 'MahasiswaController@create')->name('mahasiswa.create');
+
+route::get('soal', [SoalController::class, 'index']);
+route::get('soal/tambah', [SoalController::class, 'tambah']);
+route::get('soal/store', [SoalController::class, 'store'])->name('soal.store');

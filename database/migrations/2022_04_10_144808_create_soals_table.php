@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSultonTable extends Migration
+class CreateSoalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateSultonTable extends Migration
      */
     public function up()
     {
-        Schema::create('sulton', function (Blueprint $table) {
+        Schema::create('soals', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('alamat');
-            $table->integer('umur');
-            $table->date('tanggal');
-
             $table->timestamps();
         });
     }
@@ -31,6 +26,6 @@ class CreateSultonTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sulton');
+        Schema::dropIfExists('soals');
     }
 }

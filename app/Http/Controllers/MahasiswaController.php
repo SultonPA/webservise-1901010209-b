@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\sulton;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,6 @@ class MahasiswaController extends Controller
 
     public function create()
     {
-        return view('mahasiswa/add');
+        return view('mahasiswa.create');
     }
 }

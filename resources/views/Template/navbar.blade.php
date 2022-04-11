@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-success">
+<nav class="navbar navbar-expand-lg navbar-light bg-warning">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Wservice</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,10 +10,10 @@
                     <a class="nav-link active" aria-current="page" href="{{url('master')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('data-mahasiswa')}}">Mahasiswa</a>
+                    <a class="nav-link" href="{{url('soal')}}">Tambah Mahasiswa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('add-mahasiswa')}}">Tambah Mahasiswa</a>
+                    <a class="nav-link" href="{{url('soal/tambah')}}">Mahasiswa</a>
                 </li>
 
             </ul>

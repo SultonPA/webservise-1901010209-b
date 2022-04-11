@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +20,7 @@
             <div class="card">
                 <div class="card-header mb-2">
                     Data dosen
-                    <a class="btn btn-primary float-end" href="{{route('mahasiswa.create')}}"><i class="fa-solid fa-square-plus"></i> Tambah</a>
+                    <a class="btn btn-primary float-end" href="{{url('soal/tambah')}}"><i class="fa-solid fa-square-plus"></i> Tambah</a>
                 </div>
                 <div class="card-body">
                     <table class="table table-dark table-striped">
