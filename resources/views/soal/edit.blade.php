@@ -10,7 +10,7 @@
 
 <body>
     @extends('template.master')
-    @section('judul', 'tambah soal')
+    @section('judul', 'edit soal')
 
     @section('isi')
     @if ($errors->any())
@@ -27,7 +27,7 @@
         <div class="col-10">
             <div class="card">
                 <div class="card-header mb-2">
-                    Tambah data
+                    Kembali
                     <a class="btn btn-primary float-end" href="{{url('soal')}}"><i class="fas fa-backward"></i> back</a>
                 </div>
                 <div class="form-group">
@@ -50,7 +50,7 @@
                             <label for="">keterangan</label>
                             <input type="text" name="keterangan" class="form-control" value="{{old('keterangan')}}">
                         </div>
-                        <input type="submit" class="btn btn-primary" name="simpan" value="simpan">
+                        <input type="submit" class="btn btn-success" name="simpan" value="simpan">
 
                     </form>
                 </div>

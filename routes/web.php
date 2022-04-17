@@ -50,4 +50,7 @@ route::get('mahasiswa/create', 'MahasiswaController@create')->name('mahasiswa.cr
 
 route::get('soal', [SoalController::class, 'index']);
 route::get('soal/tambah', [SoalController::class, 'tambah']);
-route::get('soal/store', [SoalController::class, 'store'])->name('soal.store');
+
+route::post('save-soal', [SoalController::class, 'store']);
+route::delete('delete-soal/{id}', [SoalController::class, 'destroy'])->name('delete.soal');
+route::get('soal/edit', [SoalController::class, 'edit']);

@@ -9,5 +9,6 @@ class soal extends Model
 {
     use HasFactory;
     protected $table = 'soals';
+    public $timestamps = false;
     protected $fillable = ['nama_mk', 'dosen', 'jumlah_soal', 'keterangan'];
 }

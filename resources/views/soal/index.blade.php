@@ -31,6 +31,8 @@
                                 <th>dosen</th>
                                 <th>jumlah soal</th>
                                 <th>keterangan</th>
+                                <th>hapus</th>
+                                <th>edit</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,6 +43,16 @@
                                 <td>{{$row->dosen}}</td>
                                 <td>{{$row->jumlah_soal}}</td>
                                 <td>{{$row->keterangan}}</td>
+                                <td>
+                                    <form action="{{route('delete.soal', $row->id)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('anda yakin akan menghapus')">hapus</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <button type="submit" class="btn btn-success btn-sm"><a href="{{url('soal/edit')}}">edit</a></button>
+                                </td>
 
                             </tr>
                             @endforeach

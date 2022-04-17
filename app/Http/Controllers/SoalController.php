@@ -19,7 +19,26 @@ class SoalController extends Controller
     }
     public function store(Request $request)
     {
-        $data = soal::tambah($request->all());
-        return redirect('soal');
+        $this->validate(
+            $request,
+            [
+                'nama_mk' => 'required',
+                'dosen' => 'required|min:10',
+                'jumlah_soal' => 'required|numeric',
+                'keterangan' => 'required',
+            ]
+        );
+        soal::create($request->all());
+        return redirect(url('soal'));
+    }
+    public function destroy(soal $id)
+    {
+        $id->delete();
+        return redirect(url('soal'));
+    }
+    public function edit(soal $id)
+    {
+        $data = soal::findorfail($id);
+        return view('soal.edit', compact($data));
     }
 }
