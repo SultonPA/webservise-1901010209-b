@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah mahasiswa</title>
+    <title>edit mahasiswa</title>
 </head>
 
 <body>
@@ -31,24 +31,24 @@
                     <a class="btn btn-primary float-end" href="{{url('soal')}}"><i class="fas fa-backward"></i> back</a>
                 </div>
                 <div class="form-group">
-                    <form action="{{url('save-soal')}}" method="POST">
-
+                    <form action="{{ route('update.soal', $id->id)}}" method="POST">
                         @csrf
+                        @method('PATCH')
                         <div class="from-group">
                             <label for="">nama matkul</label>
-                            <input type="text" name="nama_mk" class="form-control" value="{{old('nama_mk')}}">
+                            <input type="text" id="" name="nama_mk" class="form-control" value="{{ $id->nama_mk }}">
                         </div>
                         <div class="from-group">
                             <label for="">dosen</label>
-                            <input type="text" name="dosen" class="form-control" value="{{old('dosen')}}">
+                            <input type="text" name="dosen" class="form-control" value="{{$id->dosen}}">
                         </div>
                         <div class="from-group">
                             <label for="">jumlah soal</label>
-                            <input type="number" name="jumlah_soal" class="form-control" value="{{old('jumlah_soal')}}">
+                            <input type="number" name="jumlah_soal" class="form-control" value="{{$id->jumlah_soal}}">
                         </div>
                         <div class="from-group">
                             <label for="">keterangan</label>
-                            <input type="text" name="keterangan" class="form-control" value="{{old('keterangan')}}">
+                            <input type="text" name="keterangan" class="form-control" value="{{$id->keterangan}}">
                         </div>
                         <input type="submit" class="btn btn-success" name="simpan" value="simpan">
 

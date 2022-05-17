@@ -38,7 +38,21 @@ class SoalController extends Controller
     }
     public function edit(soal $id)
     {
-        $data = soal::findorfail($id);
-        return view('soal.edit', compact($data));
+        // $data = soal::findorfail($id);
+        return view('soal.edit', compact('id'));
+    }
+    public function update(Request $request, soal $id)
+    {
+        $this->validate(
+            $request,
+            [
+                'nama_mk' => 'required',
+                'dosen' => 'required|min:10',
+                'jumlah_soal' => 'required|numeric',
+                'keterangan' => 'required',
+            ]
+        );
+        $id->update($request->all());
+        return redirect(url('soal'));
     }
 }

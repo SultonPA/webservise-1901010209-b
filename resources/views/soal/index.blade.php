@@ -51,7 +51,7 @@
                                     </form>
                                 </td>
                                 <td>
-                                    <button type="submit" class="btn btn-success btn-sm"><a href="{{url('soal/edit')}}">edit</a></button>
+                                    <button type="submit" class="btn btn-success btn-sm"><a href="{{ url('soal-edit')}}/{{ $row->id}}">edit</a></button>
                                 </td>
 
                             </tr>
