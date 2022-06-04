@@ -29,7 +29,7 @@
                         <th scope="col">kecamatan</th>
                         <th scope="col">desa</th>
                         <th scope="col">dusun</th>
-                        <th scope="col">kode pos</th>
+                        <th scope="col">nomor</th>
                         <th scope="col">dibuat</th>
                         <th scope="col">aksi</th>
                     </tr>
@@ -48,7 +48,7 @@
                         <td>{{ $row->kecamatan}}</td>
                         <td>{{ $row->desa}}</td>
                         <td>{{ $row->dusun}}</td>
-                        <td>{{ $row->kodepos}}</td>
+                        <td>{{ $row->nomor}}</td>
                         <td>{{ $row->created_at}}</td>
                         <td>
                             <a href="/tampillokasi/{{$row->id}}" class="btn btn-info">edit</a>

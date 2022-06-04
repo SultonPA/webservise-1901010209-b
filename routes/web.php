@@ -92,3 +92,7 @@ route::get('/tampillokasi/{id}', [LokasiController::class, 'tampillokasi'])->nam
 route::post('/updatelokasi/{id}', [LokasiController::class, 'updatelokasi'])->name('updatelokasi');
 
 route::get('/hapuslokasi/{id}', [LokasiController::class, 'hapuslokasi'])->name('hapuslokasi');
+
+
+//coba
+route::view('/wisata', 'wisatasesaot.wisata');

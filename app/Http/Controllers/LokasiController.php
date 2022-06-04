@@ -27,7 +27,7 @@ class LokasiController extends Controller
             'kecamatan' => 'required |min:3',
             'desa' => 'required |min:3',
             'dusun' => 'required |min:3',
-            'kodepos' => 'required | min:6',
+            'nomor' => 'required | min:6',
         ]);
 
 

@@ -60,9 +60,9 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">kode pos</label>
-                                <input type="number" name="kodepos" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                @error('kodepos')
+                                <label for="exampleInputEmail1" class="form-label">nomor</label>
+                                <input type="number" name="nomor" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                @error('nomor')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
