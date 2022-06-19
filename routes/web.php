@@ -96,3 +96,5 @@ route::get('/hapuslokasi/{id}', [LokasiController::class, 'hapuslokasi'])->name(
 
 //coba
 route::view('/wisata', 'wisatasesaot.wisata');
+route::view('/pesantiket', 'wisatasesaot.pesantiket');
+route::view('/struk', 'wisatasesaot.struk');

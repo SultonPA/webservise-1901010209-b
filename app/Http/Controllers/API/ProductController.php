@@ -14,7 +14,8 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $data = Product::all();
+        // $data = Product::all();
+        $data = Product::with('category')->get();
         return response()->json($data, 200);
     }
     public function show($id)
@@ -31,10 +32,13 @@ class ProductController extends Controller
         if (empty($data)) {
             return response()->json(['message' => 'data tidak ditemukan'], 404);
         }
+        $data->delete();
         return response()->json([
-            'message' => 'data berhasil dihapus'
+            'message' => 'data berhasil dihapus',
+            'data' => $data
         ], 200);
     }
+
     public function store(Request $request)
     {
         $validate = Validator::make($request->all(), [
@@ -43,13 +47,41 @@ class ProductController extends Controller
             'price' => 'required',
             'category_id' => 'required'
         ]);
-        if ($validate->passes()) {
-            return product::create($request->all());
-            return response()->json(['message' => 'data berhasil disimpan']);
+        if ($validate->fails()) {
+            return $validate->errors();
+            // return product::create($request->all());
+
         }
+
+        $data = Product::create($request->all());
         return response()->json([
-            'message' => 'data gagal disimpan',
-            'status' => $validate->errors()->all()
+            'message' => 'data berhasil disimpan',
+            'data' => $data
+        ], 201);
+    }
+    //update
+    public function update(Request $request, $id)
+    {
+        $data = Product::where('id', $id)->first();
+        if (!empty($data)) {
+            return response()->json(['message' => 'data tidak ditemukan'], 404);
+        }
+        $validate = Validator::make($request->all(), [
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'category_id' => 'required'
         ]);
+        if ($validate->fails()) {
+            return $validate->errors();
+            // return product::create($request->all());
+
+        }
+
+        $data->update($request->all());
+        return response()->json([
+            'message' => 'data berhasil disimpan',
+            'data' => $data
+        ], 201);
     }
 }

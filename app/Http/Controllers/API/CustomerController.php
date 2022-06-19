@@ -44,7 +44,7 @@ class CustomerController extends Controller
             'email' => 'required',
             'address' => 'required'
         ]);
-        if ($validate->passes()) {
+        if ($validate->fails()) {
             return Customer::create($request->all());
             return response()->json(['message' => 'data berhasil disimpan']);
         }

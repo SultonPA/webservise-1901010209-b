@@ -37,6 +37,9 @@ Route::get('product/{id}', [ProductController::class, 'show']);
 Route::delete('product/{id}', [ProductController::class, 'destroy']);
 // //tambah
 Route::post('product', [ProductController::class, 'store']);
+//update
+Route::patch('product/{id}', [ProductController::class, 'update']);
+
 
 //orders
 Route::get('order', [OrderController::class, 'index']);

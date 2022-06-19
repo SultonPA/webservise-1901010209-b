@@ -42,7 +42,7 @@ class OrderController extends Controller
             'product_id' => 'required',
             'status' => 'required'
         ]);
-        if ($validate->passes()) {
+        if ($validate->fails()) {
             return order::create($request->all());
             return response()->json(['message' => 'data berhasil disimpan']);
         }

@@ -20,7 +20,6 @@ class CreateProductsTable extends Migration
             $table->float('price');
             $table->integer('category_id');
             $table->timestamps();
-            $table->unsignedBigInteger('category_id');
         });
     }
 
