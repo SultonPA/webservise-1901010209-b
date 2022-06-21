@@ -6,6 +6,7 @@ use App\Http\Controllers\API\CustomerController;
 use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\CategorieController;
+use App\Http\Controller\AuthController;
 
 
 /*
@@ -56,3 +57,17 @@ Route::get('category/{id}', [CategorieController::class, 'show']);
 Route::delete('category/{id}', [CategorieController::class, 'destroy']);
 // //tambah
 Route::post('category', [CategorieController::class, 'store']);
+
+Route::group([
+
+    'middleware' => 'api',
+    'prefix' => 'auth'
+
+], function ($router) {
+
+    Route::post('login', [App\Http\Controllers\AuthController::class, 'login']);
+    Route::post('logout', [App\Http\Controllers\AuthController::class, 'login']);
+    Route::post('refresh', [App\Http\Controllers\AuthController::class, 'refresh']);
+    Route::post('me', [App\Http\Controllers\AuthController::class, 'me']);
+
+});
